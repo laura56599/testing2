@@ -36,9 +36,9 @@ test('Probar componente text box y formulario', async ({ page }) => {
   await page.goto('https://demoqa.com/');  
   await page.getByRole('heading', { name: 'Elements' }).click();
   await page.locator("//span[contains(text(), 'Text Box')]").click();
-  await page.getByRole('textbox', { name: 'Full Name' }).fill("Pepito Montoya");  // campo 1
-  await page.getByRole('textbox', { name: 'name@example.com' }).fill("pepito@prueba.com");
-  await page.getByRole('textbox', { name: 'Current Address' }).fill("Calle falsa 123");
+  await page.getByRole('textbox', { name: 'Full Name' }).fill("Perana Chaves");  // campo 1
+  await page.getByRole('textbox', { name: 'name@example.com' }).fill("perana@prueba.com");
+  await page.getByRole('textbox', { name: 'Current Address' }).fill("carrera 89a #23-15");
   await page.locator('//textarea[@id="permanentAddress"]').fill("Prueba Permanent A.");
   await page.getByRole('button', { name: 'Submit' }).click();
   
@@ -51,11 +51,11 @@ test('Probar componente text box y formulario GRABANDO', async ({ page }) => {
   await page.getByRole('heading', { name: 'Elements' }).click();
   await page.getByText('Text Box').click();
   await page.getByPlaceholder('Full Name').fill('pepito Montoya'); // campo 1
-  await page.getByPlaceholder('name@example.com').fill('pepito@prueba.com');
+  await page.getByPlaceholder('name@example.com').fill('perana@prueba.com');
   await page.getByPlaceholder('Current Address').fill('prueba current');
   await page.locator('#permanentAddress').fill('prueba address');
   await page.getByRole('button', { name: 'Submit' }).click();
-  await expect(page.locator('#email')).toContainText('Email:pepito@prueba.com');
+  await expect(page.locator('#email')).toContainText('Email:perana@prueba.com');
 });
 
 test('Probar componente Web table', async ({ page }) => {
@@ -63,14 +63,14 @@ test('Probar componente Web table', async ({ page }) => {
   await page.getByRole('heading', { name: 'Elements' }).click();
   await page.getByText('Web Tables').click();
   await page.getByRole('button', { name: 'Add' }).click();
-  await page.getByPlaceholder('First Name').fill('Pepito');
-  await page.getByPlaceholder('Last Name').fill('Montoya');
-  await page.getByPlaceholder('name@example.com').fill('pepito@prueba.com');
+  await page.getByPlaceholder('First Name').fill('Perana');
+  await page.getByPlaceholder('Last Name').fill('Chaves');
+  await page.getByPlaceholder('name@example.com').fill('perana@prueba.com');
   await page.getByPlaceholder('Age').fill('22');
   await page.getByPlaceholder('Salary').fill('1000');
-  await page.getByPlaceholder('Department').fill('Antioquia');
+  await page.getByPlaceholder('Department').fill('Cundinamarca');
   await page.getByRole('button', { name: 'Submit' }).click();
-  await expect(page.getByRole('grid')).toContainText('pepito@prueba.com');
+  await expect(page.getByRole('grid')).toContainText('perana@prueba.com');
 });
 
 test('Probar componente Web table eliminar registro', async ({ page }) => {
@@ -78,16 +78,16 @@ test('Probar componente Web table eliminar registro', async ({ page }) => {
   await page.getByRole('heading', { name: 'Elements' }).click();
   await page.getByText('Web Tables').click();
   await page.getByRole('button', { name: 'Add' }).click();
-  await page.getByPlaceholder('First Name').fill('Pepito');
-  await page.getByPlaceholder('Last Name').fill('Montoya');
-  await page.getByPlaceholder('name@example.com').fill('pepito@prueba.com');
+  await page.getByPlaceholder('First Name').fill('Perana');
+  await page.getByPlaceholder('Last Name').fill('chaves');
+  await page.getByPlaceholder('name@example.com').fill('perana@prueba.com');
   await page.getByPlaceholder('Age').fill('22');
   await page.getByPlaceholder('Salary').fill('1000');
-  await page.getByPlaceholder('Department').fill('Antioquia');
+  await page.getByPlaceholder('Department').fill('Cundinamarca');
   await page.screenshot({path: 'Evidencias/evidencia Tabla 1.png', fullPage:true});
   await page.getByRole('button', { name: 'Submit' }).click();
   // await page.waitForTimeout(5000);
-  await expect(page.getByRole('grid')).toContainText('pepito@prueba.com');
+  await expect(page.getByRole('grid')).toContainText('perana@prueba.com');
   
   await page.screenshot({path: 'Evidencias/evidencia Tabla 2.png', fullPage:true});
   //await page.locator('#delete-record-4 path').click(); // Malo
