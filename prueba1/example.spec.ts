@@ -42,7 +42,7 @@ test('Probar componente text box y formulario', async ({ page }) => {
   await page.locator('//textarea[@id="permanentAddress"]').fill("Prueba Permanent A.");
   await page.getByRole('button', { name: 'Submit' }).click();
   
-  await expect(page.getByText("Email:pepito@prueba.com")).toBeVisible({ timeout: 8_000 });
+  await expect(page.getByText("Email:perana@prueba.com")).toBeVisible({ timeout: 8_000 });
   // await expect(page.locator('//p[@id="email"]')).toBeVisible();  // no es tan bueno
 });
 
@@ -92,7 +92,7 @@ test('Probar componente Web table eliminar registro', async ({ page }) => {
   await page.screenshot({path: 'Evidencias/evidencia Tabla 2.png', fullPage:true});
   //await page.locator('#delete-record-4 path').click(); // Malo
   
-  await page.locator('(//div[contains(text(),"pepito@prueba.com")]//following::span)[2]').click();
+  await page.locator('(//div[contains(text(),"perana@prueba.com")]//following::span)[2]').click();
   await page.screenshot({path: 'Evidencias/evidencia Tabla 3.png', fullPage:true});
 });
 
